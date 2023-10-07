@@ -30,3 +30,14 @@ C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\obj\Debug\net6.0\re
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\obj\Debug\net6.0\DoctorAPI.pdb
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\obj\Debug\net6.0\DoctorAPI.genruntimeconfig.cache
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\obj\Debug\net6.0\ref\DoctorAPI.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\EntityFramework.SqlServer.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\EntityFramework.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

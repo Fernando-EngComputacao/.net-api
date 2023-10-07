@@ -9,12 +9,13 @@ namespace DoctorAPI.Controllers;
 public class DoctorController : ControllerBase
 {
     private static List<Doctor> listDoctors = new List<Doctor>();
-    private static int id;
+    private static int idDoctor;
+    private static int idAddress;
         
     [HttpPost]
     public IActionResult registerDoctor([FromBody] RegisterDoctor doctor)
     {
-        var item = doctor.convert(id++, doctor);
+        var item = doctor.convertToDoctor(idDoctor++, idAddress++, doctor);
         listDoctors.Add(item);
         return CreatedAtAction(nameof(recoverDoctorById), new { id = item.id }, item);
     }
