@@ -9,6 +9,9 @@ builder.Services.AddDbContext<DoctorContext>(opts =>
     opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) 
 );
 
+// To use AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Add services to the container.
 
 builder.Services.AddControllers();

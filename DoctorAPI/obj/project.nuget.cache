@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "qLlXmCtLKwnekt97cyY1FwSkwcNTqsfi83TWgxDRNn1HCniw1ebT+aedc9Z5UAy0zO+7nLTASk0i4ngiwa2JeA==",
+  "dgSpecHash": "Xw/TPWN/YxRxiUibP4d4djpQk+meDwywtjQkC4cQQ4FeVWRu8LV39N1HhdHDocD1nCfsWBrIZM0t5s+eFP0JSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\fernando.furtado\\Workspace\\ride\\DoctorAPI\\DoctorAPI\\DoctorAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\entityframework\\6.0.1\\entityframework.6.0.1.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.10\\microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",
