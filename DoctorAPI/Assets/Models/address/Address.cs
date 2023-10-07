@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DoctorAPI.Models;
+﻿namespace DoctorAPI.Models;
 
 public class Address
 {

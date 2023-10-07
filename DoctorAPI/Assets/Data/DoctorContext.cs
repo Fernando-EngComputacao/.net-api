@@ -1,5 +1,4 @@
 ﻿using DoctorAPI.Models;
-using DoctorAPI.Models.dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAPI.Assets.data;

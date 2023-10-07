@@ -47,3 +47,5 @@ C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Mi
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\DoctorAPI.xml
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\obj\Debug\net6.0\DoctorAPI.xml

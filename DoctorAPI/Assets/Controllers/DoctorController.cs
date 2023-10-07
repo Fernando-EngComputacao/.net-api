@@ -1,6 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System.Xml.Serialization;
 using AutoMapper;
 using DoctorAPI.Assets.data;
+using DoctorAPI.core;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
 using Microsoft.AspNetCore.JsonPatch;
@@ -21,7 +22,15 @@ public class DoctorController : ControllerBase
         _mapper = imapper;
     }
     
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="DoctorDTO">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
+
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult registerDoctor([FromBody] CreateDoctorDTO dto)
     {
         Doctor doctor = _mapper.Map<Doctor>(dto);
@@ -30,7 +39,8 @@ public class DoctorController : ControllerBase
         _context.SaveChanges();
         return CreatedAtAction(nameof(recoverDoctorById), new { id = doctor.id }, doctor);
     }
-
+    
+    /// <summary> Busca a lista inteira de médicos </summary>
     [HttpGet]
     public IEnumerable<UpdateDoctorDTO> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
@@ -40,6 +50,7 @@ public class DoctorController : ControllerBase
 
     }
 
+    /// <summary> Busca a lista inteira de médicos ativos  </summary>
     [HttpGet("/Doctor/State")]
     public IActionResult recoverDoctorActive()
     {
@@ -48,13 +59,16 @@ public class DoctorController : ControllerBase
         return (result != null ? Ok(result) : NotFound());
     }
 
+    /// <summary> Busca um médico por um {id} </summary>
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult recoverDoctorById(long id)
     {
         var result = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
         return (result != null ? Ok(result) : NotFound());
-    }
+    }   
 
+    /// <summary> Atualiza dados do médico por um {id} </summary>
     [HttpPut("{id}")]
     public IActionResult updateDoctor(int id, [FromQuery] UpdateDoctorDTO dto)
     {
@@ -65,6 +79,7 @@ public class DoctorController : ControllerBase
         return NoContent();
     }
     
+    /// <summary> Atualiza dados do médico por um {id} </summary>
     [HttpPatch("{id}")]
     public IActionResult updatePatchDoctor(int id, JsonPatchDocument<UpdateDoctorDTO> patch)
     {
@@ -80,6 +95,7 @@ public class DoctorController : ControllerBase
         return NoContent();
     }
 
+    /// <summary> Deleta definitivamente o médico do {id} escolhido </summary>
     [HttpDelete("{id}")]
     public IActionResult removeDoctor(int id)
     {
@@ -90,6 +106,7 @@ public class DoctorController : ControllerBase
         return NoContent();
     }
 
+    /// <summary> Inativa o médico do {id} escolhido </summary>
     [HttpDelete("/Doctor/State/{id}")]
     public IActionResult removeLogical(int id)
     {

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DoctorAPI</name>
+    </assembly>
+    <members>
+        <member name="M:DoctorAPI.Controllers.DoctorController.registerDoctor(DoctorAPI.Models.dto.CreateDoctorDTO)">
+            <summary>
+            Adiciona um filme ao banco de dados
+            </summary>
+            <param name="DoctorDTO">Objeto com os campos necessários para criação de um filme</param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctor(System.Int32,System.Int32)">
+            <summary> Busca a lista inteira de médicos </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctorActive">
+            <summary> Busca a lista inteira de médicos ativos  </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctorById(System.Int64)">
+            <summary> Busca um médico por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.updateDoctor(System.Int32,DoctorAPI.Models.dto.UpdateDoctorDTO)">
+            <summary> Atualiza dados do médico por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.updatePatchDoctor(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{DoctorAPI.Models.dto.UpdateDoctorDTO})">
+            <summary> Atualiza dados do médico por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.removeDoctor(System.Int32)">
+            <summary> Deleta definitivamente o médico do {id} escolhido </summary>
+        </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.removeLogical(System.Int32)">
+            <summary> Inativa o médico do {id} escolhido </summary>
+        </member>
+    </members>
+</doc>
