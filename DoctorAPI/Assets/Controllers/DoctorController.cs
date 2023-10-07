@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Data.Entity;
+using AutoMapper;
 using DoctorAPI.Assets.data;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
@@ -24,15 +25,27 @@ public class DoctorController : ControllerBase
     public IActionResult registerDoctor([FromBody] CreateDoctorDTO dto)
     {
         Doctor doctor = _mapper.Map<Doctor>(dto);
+        doctor.active = 1 ;
         _context.Doctors.Add(doctor);
         _context.SaveChanges();
         return CreatedAtAction(nameof(recoverDoctorById), new { id = doctor.id }, doctor);
     }
 
     [HttpGet]
-    public IEnumerable<Doctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<UpdateDoctorDTO> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _context.Doctors.Skip(skip).Take(take);
+        var doctors = _context.Doctors.Skip(skip).Take(take);
+        var result = doctors.Select(doctor => _mapper.Map<UpdateDoctorDTO>(doctor));
+        return result.ToList();
+
+    }
+
+    [HttpGet("/Doctor/State")]
+    public IActionResult recoverDoctorActive()
+    {
+        var activeDoctors =  _context.Doctors.Where(d => d.active == 1);
+        var result = activeDoctors.Select(d => _mapper.Map<UpdateDoctorDTO>(d));
+        return (result != null ? Ok(result) : NotFound());
     }
 
     [HttpGet("{id}")]
@@ -55,7 +68,7 @@ public class DoctorController : ControllerBase
     [HttpPatch("{id}")]
     public IActionResult updatePatchDoctor(int id, JsonPatchDocument<UpdateDoctorDTO> patch)
     {
-        Doctor doctor = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
+        Doctor doctor = _context.Doctors.FirstOrDefault(dct => dct.id == id);
         if (doctor == null) return NotFound();
         
         var toUpdateDoctor = _mapper.Map<UpdateDoctorDTO>(doctor);
@@ -63,6 +76,26 @@ public class DoctorController : ControllerBase
         if (!TryValidateModel(toUpdateDoctor)) return ValidationProblem(ModelState);
     
         _mapper.Map(toUpdateDoctor, doctor);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult removeDoctor(int id)
+    {
+        Doctor doctor = _context.Doctors.FirstOrDefault(dct => dct.id == id);
+        if (doctor == null) return NotFound();
+        _context.Remove(doctor);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
+    [HttpDelete("/Doctor/State/{id}")]
+    public IActionResult removeLogical(int id)
+    {
+        Doctor doctor = _context.Doctors.FirstOrDefault(dct => dct.id == id);
+        if (doctor == null) return NotFound();
+        doctor.active = 0;
         _context.SaveChanges();
         return NoContent();
     }
