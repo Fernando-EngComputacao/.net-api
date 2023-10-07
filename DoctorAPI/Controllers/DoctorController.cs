@@ -14,7 +14,12 @@ public class DoctorController : ControllerBase
     public void addDoctor([FromBody] RegisterDoctor doctor)
     {
         listDoctors.Add(doctor);
-        Console.WriteLine(doctor.name);
+    }
+
+    [HttpGet]
+    public IEnumerable<RegisterDoctor> recoverDoctor()
+    {
+        return listDoctors;
     }
     
 }
