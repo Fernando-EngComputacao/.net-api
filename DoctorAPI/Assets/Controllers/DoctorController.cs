@@ -40,4 +40,14 @@ public class DoctorController : ControllerBase
         var result = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
         return (result != null ? Ok(result) : NotFound());
     }
+
+    [HttpPut("{id}")]
+    public IActionResult updateDoctor(int id, [FromQuery] UpdateDoctorDTO dto)
+    {
+        Doctor doctor = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
+        if (doctor == null) return NotFound();
+        _mapper.Map(dto, doctor);
+        _context.SaveChanges();
+        return NoContent();
+    }
 }
