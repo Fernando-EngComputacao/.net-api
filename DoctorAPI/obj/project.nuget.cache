@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xw/TPWN/YxRxiUibP4d4djpQk+meDwywtjQkC4cQQ4FeVWRu8LV39N1HhdHDocD1nCfsWBrIZM0t5s+eFP0JSw==",
+  "dgSpecHash": "dIYcepj6mmDomKA0cHP0TT6SFCW1zUL0edgT4vlhP7XqxbPE+A/2y/uVOkaeZTbBwDKhGqdaXCnp/fRW5KHOVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\fernando.furtado\\Workspace\\ride\\DoctorAPI\\DoctorAPI\\DoctorAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\entityframework\\6.0.1\\entityframework.6.0.1.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.10\\microsoft.aspnetcore.jsonpatch.6.0.10.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.10\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.10.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
@@ -27,6 +29,8 @@
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.2\\pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
