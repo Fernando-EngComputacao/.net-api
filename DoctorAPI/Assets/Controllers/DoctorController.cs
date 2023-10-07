@@ -9,25 +9,27 @@ namespace DoctorAPI.Controllers;
 public class DoctorController : ControllerBase
 {
     private static List<Doctor> listDoctors = new List<Doctor>();
-    private static long id;
-    
-    [HttpPost]
-    public void addDoctor([FromBody] RegisterDoctor doctor)
-    {
+    private static int id;
         
-        listDoctors.Add(doctor.convert(id++, doctor));
+    [HttpPost]
+    public IActionResult registerDoctor([FromBody] RegisterDoctor doctor)
+    {
+        var item = doctor.convert(id++, doctor);
+        listDoctors.Add(item);
+        return CreatedAtAction(nameof(recoverDoctorById), new { id = item.id }, item);
     }
 
     [HttpGet]
-    public IEnumerable<Doctor> recoverDoctor()
+    public IEnumerable<Doctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return listDoctors;
+        return listDoctors.Skip(skip).Take(take);
     }
 
     [HttpGet("{id}")]
-    public Doctor? recoverDoctorById(long id)
+    public IActionResult recoverDoctorById(long id)
     {
-        return listDoctors.FirstOrDefault(doctor => doctor.id == id);
+        var result = listDoctors.FirstOrDefault(doctor => doctor.id == id);
+        return (result != null ? Ok(result) : NotFound());
     }
 }
 

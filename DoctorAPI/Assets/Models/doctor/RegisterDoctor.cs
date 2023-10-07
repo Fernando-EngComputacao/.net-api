@@ -17,7 +17,7 @@ public class RegisterDoctor
     public Address address { get; set; }
     
 
-    public Doctor convert(long id, RegisterDoctor doctor)
+    public Doctor convert(int id, RegisterDoctor doctor)
     {
         return new Doctor(id, doctor.name, doctor.specialty, doctor.crm, doctor.email, doctor.telephone,
             doctor.address);

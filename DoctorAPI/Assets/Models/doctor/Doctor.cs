@@ -4,7 +4,7 @@ namespace DoctorAPI.Models;
 
 public class Doctor
 {
-    public long id { get; set; }
+    public int id { get; set; }
     public string name { get; set; }
     public string specialty { get; set; }
     public string crm { get; set; }
@@ -13,7 +13,7 @@ public class Doctor
     public Address address { get; set; }
 
 
-    public Doctor(long id, string name, string specialty, string crm, string email, string telephone, Address address)
+    public Doctor(int id, string name, string specialty, string crm, string email, string telephone, Address address)
     {
         this.id = id;
         this.name = name;

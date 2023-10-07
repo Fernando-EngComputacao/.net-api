@@ -1,4 +1,13 @@
+using DoctorAPI.Assets.data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString(("DoctorConnection"));
+
+builder.Services.AddDbContext<DoctorContext>(opts => 
+    opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) 
+);
 
 // Add services to the container.
 
@@ -8,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
