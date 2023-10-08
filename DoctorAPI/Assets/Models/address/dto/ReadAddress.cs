@@ -1,6 +1,6 @@
 ﻿namespace DoctorAPI.Models.dto;
 
-public class InputAddress
+public class ReadAddress
 {
     public string place { get; set; }
     public string neighborhood { get; set; }

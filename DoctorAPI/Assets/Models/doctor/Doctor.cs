@@ -18,9 +18,6 @@ public class Doctor
     public string telephone { get; set; }
     [Required]
     public int active { get; set; }
-    
-    // [Required]
-    // public Address address { get; set; }
-    
-    public Doctor(){}
+    public int addressId { get; set; }
+    public virtual Address address { get; set; }
 }

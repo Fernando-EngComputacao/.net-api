@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace DoctorAPI.Models.dto;
 
-namespace DoctorAPI.Models;
-
-public class Address
+public class CreateAddress
 {
-    [Key]
-    [Required]
-    public int id { get; set; }
     public string place { get; set; }
     public string neighborhood { get; set; }
     public string cep { get; set; }
@@ -14,6 +9,4 @@ public class Address
     public string uf { get; set; }
     public string complement { get; set; }
     public string number { get; set; }
-    public virtual Doctor doctorId { get; set; }
-    
 }

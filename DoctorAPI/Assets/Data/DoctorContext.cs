@@ -11,4 +11,5 @@ public class DoctorContext : DbContext
     }
     
     public DbSet<Doctor> Doctors { get; set; }
+    public DbSet<Address> Address { get; set; }
 }
