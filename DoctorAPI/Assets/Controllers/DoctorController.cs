@@ -23,9 +23,9 @@ public class DoctorController : ControllerBase
     }
     
     /// <summary>
-    /// Adiciona um filme ao banco de dados
+    /// Adiciona um médico ao banco de dados
     /// </summary>
-    /// <param name="DoctorDTO">Objeto com os campos necessários para criação de um filme</param>
+    /// <param name="DoctorDTO">Objeto com os campos necessários para criação de um médico</param>
     /// <returns>IActionResult</returns>
     /// <response code="201">Caso inserção seja feita com sucesso</response>
 

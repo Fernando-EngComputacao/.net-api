@@ -6,5 +6,5 @@ public class ReadPatient
     public string birth { get; set; }
     public string telephone { get; set; }
     public string email { get; set; }
-    public ReadPatient address { get; set; }
+    public ReadAddress address { get; set; }
 }

@@ -20,7 +20,7 @@ public class PatientController : ControllerBase
         _mapper = imapper;
     }
     
-    /// <summary> Adiciona um filme ao banco de dados </summary>
+    /// <summary> Adiciona um paciente ao banco de dados </summary>
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult registerPatient([FromBody] CreatePatient dto)
@@ -107,14 +107,14 @@ public class PatientController : ControllerBase
         return NoContent();
     }
 
-    // /// <summary> Inativa o paciente do {id} escolhido (deleção lógica) </summary>
-    // [HttpDelete("/Patient/State/{id}")]
-    // public IActionResult removeLogical(int id)
-    // {
-    //     Patient patient = _context.Patients.FirstOrDefault(dct => dct.id == id);
-    //     if (patient == null) return NotFound();
-    //     patient.active = 0;
-    //     _context.SaveChanges();
-    //     return NoContent();
-    // }
+    /// <summary> Inativa o paciente do {id} escolhido (deleção lógica) </summary>
+    [HttpDelete("/Patient/State/{id}")]
+    public IActionResult removeLogical(int id)
+    {
+        Patient patient = _context.Patients.FirstOrDefault(dct => dct.id == id);
+        if (patient == null) return NotFound();
+        patient.active = 0;
+        _context.SaveChanges();
+        return NoContent();
+    }
 }
