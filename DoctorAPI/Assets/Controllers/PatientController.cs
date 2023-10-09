@@ -85,6 +85,7 @@ public class PatientController : ControllerBase
     public IActionResult updatePatchPatient(int id, JsonPatchDocument<UpdatePatient> patch)
     {
         Patient patient = _context.Patients.FirstOrDefault(dct => dct.id == id);
+        
         if (patient == null) return NotFound();
         
         var toUpdatePatient = _mapper.Map<UpdatePatient>(patient);
