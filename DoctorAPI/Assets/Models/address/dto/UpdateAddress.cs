@@ -9,4 +9,5 @@ public class UpdateAddress
     public string uf { get; set; }
     public string complement { get; set; }
     public string number { get; set; }
+    public int active { get; set; }
 }
