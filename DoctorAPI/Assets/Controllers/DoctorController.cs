@@ -42,11 +42,9 @@ public class DoctorController : ControllerBase
     
     /// <summary> Busca a lista inteira de médicos </summary>
     [HttpGet]
-    public IEnumerable<UpdateDoctorDTO> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<ReadDoctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        var doctors = _context.Doctors.Skip(skip).Take(take);
-        var result = doctors.Select(doctor => _mapper.Map<UpdateDoctorDTO>(doctor));
-        return result.ToList();
+        return _mapper.Map<List<ReadDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
 
     }
 
@@ -55,7 +53,7 @@ public class DoctorController : ControllerBase
     public IActionResult recoverDoctorActive()
     {
         var activeDoctors =  _context.Doctors.Where(d => d.active == 1);
-        var result = activeDoctors.Select(d => _mapper.Map<UpdateDoctorDTO>(d));
+        var result =  _mapper.Map<List<ReadDoctor>>(activeDoctors.ToList());
         return (result != null ? Ok(result) : NotFound());
     }
 
@@ -65,7 +63,7 @@ public class DoctorController : ControllerBase
     public IActionResult recoverDoctorById(long id)
     {
         var result = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
-        return (result != null ? Ok(result) : NotFound());
+        return (result != null ? Ok(_mapper.Map<ReadDoctor>(result)) : NotFound());
     }   
 
     /// <summary> Atualiza dados do médico por um {id} </summary>
@@ -75,6 +73,17 @@ public class DoctorController : ControllerBase
         Doctor doctor = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
         if (doctor == null) return NotFound();
         _mapper.Map(dto, doctor);
+        _context.SaveChanges();
+        return NoContent();
+    }
+    
+    /// <summary> Atualiza o estado para ativo do médico por um {id} </summary>
+    [HttpPut("/Doctor/State/{id}")]
+    public IActionResult updateActiveDoctor(int id)
+    {
+        Doctor doctor = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);
+        if (doctor == null) return NotFound();
+        doctor.active = 1;
         _context.SaveChanges();
         return NoContent();
     }
@@ -106,7 +115,7 @@ public class DoctorController : ControllerBase
         return NoContent();
     }
 
-    /// <summary> Inativa o médico do {id} escolhido </summary>
+    /// <summary> Inativa o médico do {id} escolhido (deleção lógica) </summary>
     [HttpDelete("/Doctor/State/{id}")]
     public IActionResult removeLogical(int id)
     {

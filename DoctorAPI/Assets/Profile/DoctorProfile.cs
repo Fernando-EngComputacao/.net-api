@@ -9,7 +9,10 @@ public class DoctorProfile : Profile
     public DoctorProfile()
     {
         CreateMap<CreateDoctorDTO, Doctor>();
-        CreateMap<UpdateDoctorDTO, Doctor>();
         CreateMap<Doctor, UpdateDoctorDTO>();
+        CreateMap<Doctor, ReadDoctor>()
+            .ForMember(doctorDto => doctorDto.address , 
+                opt => opt.MapFrom(doctor => doctor.address));
+        CreateMap<UpdateDoctorDTO, Doctor>();
     }
 }

@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString(("DoctorConnection"));
 
 builder.Services.AddDbContext<DoctorContext>(opts => 
-    opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) 
+    opts.UseLazyLoadingProxies()
+        .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) 
 );
 
 // To use AutoMapper
@@ -26,7 +27,6 @@ builder.Services.AddSwaggerGen(c =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 });
-
 
 var app = builder.Build();
 

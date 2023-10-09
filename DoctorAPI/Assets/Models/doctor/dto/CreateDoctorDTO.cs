@@ -12,5 +12,5 @@ public class CreateDoctorDTO
     [Required]
     public string specialty { get; set; }
     public string telephone { get; set; }
-    public Address address { get; set; }
+    public int addressId { get; set; }
 }

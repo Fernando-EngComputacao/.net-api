@@ -11,5 +11,6 @@ public class AddressProfile : Profile
         CreateMap<CreateAddress, Address>();
         CreateMap<Address, ReadAddress>();
         CreateMap<UpdateAddress, Address>();
+        CreateMap<Address, UpdateAddress>();
     }
 }

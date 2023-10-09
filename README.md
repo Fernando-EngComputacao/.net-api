@@ -27,6 +27,7 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 - [x] Microsoft.EntityFrameworkCore.Tools 6.0.10
 - [x] Microsoft.EntityFrameworkCore 6.0.10
 - [x] Pomelo.EntityFrameworkCore.MySql 6.0.2
+- [x] Microsoft.EntityFrameworkCore.Proxies 6.0.10
 - [x] Microsoft.AspNetCore.Mvc.NewtonsoftJson 6.0.10
 - [x] AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.0
 - [x] AutoMapper 12.0.0

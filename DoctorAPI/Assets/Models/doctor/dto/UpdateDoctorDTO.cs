@@ -12,4 +12,5 @@ public class UpdateDoctorDTO
     [Required]
     public string specialty { get; set; }
     public string telephone { get; set; }
+    public int addressId { get; set; }
 }

@@ -4,6 +4,33 @@
         <name>DoctorAPI</name>
     </assembly>
     <members>
+        <member name="M:AddressAPI.Controllers.AddressController.registerAddress(DoctorAPI.Models.dto.CreateAddress)">
+            <summary> Adiciona um endereço ao banco de dados </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.recoverAddress(System.Int32,System.Int32)">
+            <summary> Busca a lista inteira de endereços </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.recoverAddressActive">
+            <summary> Busca a lista inteira de endereços ativos   </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.recoverAddressById(System.Int64)">
+            <summary> Busca um endereço por um {id} </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.updateAddress(System.Int32,DoctorAPI.Models.dto.UpdateAddress)">
+            <summary> Atualiza dados do endereço por um {id} </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.updateToActiveAddress(System.Int32)">
+            <summary> Atualiza para ativo o estado do endereço por um {id} </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.updatePatchAddress(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{DoctorAPI.Models.dto.UpdateAddress})">
+            <summary> Atualiza dados do endereço por um {id} </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.removeAddress(System.Int32)">
+            <summary> Deleta definitivamente o endereço do {id} escolhido </summary>
+        </member>
+        <member name="M:AddressAPI.Controllers.AddressController.removeLogical(System.Int32)">
+            <summary> Inativa o endereço do {id} escolhido (deleção lógica) </summary>
+        </member>
         <member name="M:DoctorAPI.Controllers.DoctorController.registerDoctor(DoctorAPI.Models.dto.CreateDoctorDTO)">
             <summary>
             Adiciona um filme ao banco de dados
@@ -24,6 +51,9 @@
         <member name="M:DoctorAPI.Controllers.DoctorController.updateDoctor(System.Int32,DoctorAPI.Models.dto.UpdateDoctorDTO)">
             <summary> Atualiza dados do médico por um {id} </summary>
         </member>
+        <member name="M:DoctorAPI.Controllers.DoctorController.updateActiveDoctor(System.Int32)">
+            <summary> Atualiza o estado para ativo do médico por um {id} </summary>
+        </member>
         <member name="M:DoctorAPI.Controllers.DoctorController.updatePatchDoctor(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{DoctorAPI.Models.dto.UpdateDoctorDTO})">
             <summary> Atualiza dados do médico por um {id} </summary>
         </member>
@@ -31,7 +61,31 @@
             <summary> Deleta definitivamente o médico do {id} escolhido </summary>
         </member>
         <member name="M:DoctorAPI.Controllers.DoctorController.removeLogical(System.Int32)">
-            <summary> Inativa o médico do {id} escolhido </summary>
+            <summary> Inativa o médico do {id} escolhido (deleção lógica) </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.registerPatient(DoctorAPI.Models.dto.CreatePatient)">
+            <summary> Adiciona um filme ao banco de dados </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.recoverPatient(System.Int32,System.Int32)">
+            <summary> Busca a lista inteira de pacientes </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.recoverPatientActive">
+            <summary> Busca a lista inteira de pacientes ativos  </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.recoverPatientById(System.Int64)">
+            <summary> Busca um paciente por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.updatePatient(System.Int32,DoctorAPI.Models.dto.UpdatePatient)">
+            <summary> Atualiza dados do paciente por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.updateActivePatient(System.Int32)">
+            <summary> Atualiza o estado para ativo do paciente por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.updatePatchPatient(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{DoctorAPI.Models.dto.UpdatePatient})">
+            <summary> Atualiza dados do paciente por um {id} </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.PatientController.removePatient(System.Int32)">
+            <summary> Deleta definitivamente o paciente do {id} escolhido </summary>
         </member>
     </members>
 </doc>
