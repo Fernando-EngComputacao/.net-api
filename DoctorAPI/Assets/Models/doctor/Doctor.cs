@@ -19,5 +19,6 @@ public class Doctor
     [Required]
     public int active { get; set; }
     public int addressId { get; set; }
+    public virtual ICollection<Appointment> appointments { get; set; }
     public virtual Address address { get; set; }
 }

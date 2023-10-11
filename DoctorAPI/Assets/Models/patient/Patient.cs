@@ -11,7 +11,9 @@ public class Patient
     public string birth { get; set; }
     public string telephone { get; set; }
     public string email { get; set; }
+    public string cpf { get; set; }
     public int active { get; set; }
     public int addressId { get; set; }
+    public virtual ICollection<Appointment> appointments { get; set; }
     public virtual Address address { get; set; }
 }

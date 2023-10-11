@@ -22,19 +22,14 @@ public class DoctorController : ControllerBase
         _mapper = imapper;
     }
     
-    /// <summary>
-    /// Adiciona um médico ao banco de dados
-    /// </summary>
-    /// <param name="DoctorDTO">Objeto com os campos necessários para criação de um médico</param>
-    /// <returns>IActionResult</returns>
-    /// <response code="201">Caso inserção seja feita com sucesso</response>
+    /// <summary> Adiciona um médico ao banco de dados </summary>
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult registerDoctor([FromBody] CreateDoctorDTO dto)
     {
         Doctor doctor = _mapper.Map<Doctor>(dto);
-        doctor.active = 1 ;
+        doctor.active = 1;
         _context.Doctors.Add(doctor);
         _context.SaveChanges();
         return CreatedAtAction(nameof(recoverDoctorById), new { id = doctor.id }, doctor);
@@ -42,9 +37,9 @@ public class DoctorController : ControllerBase
     
     /// <summary> Busca a lista inteira de médicos </summary>
     [HttpGet]
-    public IEnumerable<ReadDoctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<ReadNameDoctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _mapper.Map<List<ReadDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
+        return _mapper.Map<List<ReadNameDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
 
     }
 
@@ -59,7 +54,6 @@ public class DoctorController : ControllerBase
 
     /// <summary> Busca um médico por um {id} </summary>
     [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult recoverDoctorById(long id)
     {
         var result = _context.Doctors.FirstOrDefault(doctor => doctor.id == id);

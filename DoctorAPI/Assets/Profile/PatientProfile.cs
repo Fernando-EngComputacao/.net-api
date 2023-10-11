@@ -10,6 +10,7 @@ public class PatientProfile : Profile
     {
         CreateMap<CreatePatient, Patient>();
         CreateMap<Patient, UpdatePatient>();
+        CreateMap<Patient, ReadNamePatient>();
         CreateMap<Patient, ReadPatient>()
             .ForMember(patientDTO => patientDTO.address , 
                 opt => opt.MapFrom(patient => patient.address));

@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using DoctorAPI.Models;
 
-namespace DoctorAPI.Assets.Models.appointment;
-
+namespace DoctorAPI.Models;
 public class Appointment
 {
     [Key]
@@ -11,7 +9,7 @@ public class Appointment
     public int? doctorId { get; set; }
     public virtual Doctor doctor { get; set; }
     public int? patientId { get; set; }
-    public Patient patient { get; set; }
+    public virtual Patient patient { get; set; }
     public DateTime date { get; set; }
     
 }
