@@ -38,12 +38,21 @@ public class DoctorController : ControllerBase
     
     /// <summary> Busca a lista inteira de médicos </summary>
     [HttpGet]
-    public IEnumerable<Object> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10, int? addressIdURL = null)
+    public IEnumerable<Object> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10, int? addressIdURL = null) // [FromQuery] string? cityD = null)
     {
-        Console.WriteLine("**ID"+addressIdURL);
         if (addressIdURL == null) return _mapper.Map<List<ReadDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
         
-        // Exemplo de como fazer busca ao DB por SQL
+        // Exemplo de como fazer busca ao DB por LINQ
+        // if(city != null) 
+        //     return _mapper.Map<List<ReadFilme>>(
+        //         _context.Filmes.Skip(skip).Take(take).ToList().Where(
+        //              filme => filme.sessoes.Any(
+        //                      sessao => sessao.cinema.nome == cityD
+        //              )
+        //          );
+        //     );
+        
+        // Exemplo de como fazer busca ao DB por RAW SQL
         return _mapper.Map<List<ReadSpecialtyDoctor>>(_context.Doctors
             .FromSqlRaw($"SELECT id, name, crm, email, telephone, specialty,addressId,active FROM doctors WHERE doctors.addressId = {addressIdURL}").ToList());
     }
