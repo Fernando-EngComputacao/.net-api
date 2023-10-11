@@ -6,6 +6,7 @@ using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAPI.Controllers;
 
@@ -37,10 +38,14 @@ public class DoctorController : ControllerBase
     
     /// <summary> Busca a lista inteira de médicos </summary>
     [HttpGet]
-    public IEnumerable<ReadNameDoctor> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<Object> recoverDoctor([FromQuery] int skip = 0, [FromQuery] int take = 10, int? addressIdURL = null)
     {
-        return _mapper.Map<List<ReadNameDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
-
+        Console.WriteLine("**ID"+addressIdURL);
+        if (addressIdURL == null) return _mapper.Map<List<ReadDoctor>>(_context.Doctors.Skip(skip).Take(take).ToList());
+        
+        // Exemplo de como fazer busca ao DB por SQL
+        return _mapper.Map<List<ReadSpecialtyDoctor>>(_context.Doctors
+            .FromSqlRaw($"SELECT id, name, crm, email, telephone, specialty,addressId,active FROM doctors WHERE doctors.addressId = {addressIdURL}").ToList());
     }
 
     /// <summary> Busca a lista inteira de médicos ativos  </summary>

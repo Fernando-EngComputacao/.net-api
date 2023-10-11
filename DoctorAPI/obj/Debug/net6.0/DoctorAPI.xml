@@ -85,7 +85,7 @@
         <member name="M:DoctorAPI.Controllers.DoctorController.registerDoctor(DoctorAPI.Models.dto.CreateDoctorDTO)">
             <summary> Adiciona um médico ao banco de dados </summary>
         </member>
-        <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctor(System.Int32,System.Int32)">
+        <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctor(System.Int32,System.Int32,System.Nullable{System.Int32})">
             <summary> Busca a lista inteira de médicos </summary>
         </member>
         <member name="M:DoctorAPI.Controllers.DoctorController.recoverDoctorActive">

@@ -2,6 +2,7 @@
 
 public class ReadAddress
 {
+    public int id { get; set; }
     public string place { get; set; }
     public string neighborhood { get; set; }
     public string cep { get; set; }
