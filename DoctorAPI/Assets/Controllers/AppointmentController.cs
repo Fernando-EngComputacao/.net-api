@@ -32,13 +32,22 @@ public class AppointmentController : ControllerBase
         return CreatedAtAction(nameof(recoverAppointmentById), new { id = appointment.id }, appointment);
     }
     
-    /// <summary> Busca a lista inteira da consultas </summary>
+    /// <summary> Busca a lista inteira da consultas com dados do médico e paciente resumidos</summary>
     [HttpGet]
     public IEnumerable<ReadNameAppointment> recoverAppointment([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
         return _mapper.Map<List<ReadNameAppointment>>(_context.Appointments.Skip(skip).Take(take).ToList());
 
     }
+    
+    /// <summary> Busca a lista inteira da consultas com todos os dados do médico e paciente </summary>
+    [HttpGet("/Appointment/all")]
+    public IEnumerable<ReadAppointment> recoverAppointmentAll([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    {
+        return _mapper.Map<List<ReadAppointment>>(_context.Appointments.Skip(skip).Take(take).ToList());
+
+    }
+    
     
     /// <summary> Busca uma consulta por um {id} </summary>
     [HttpGet("{id}")]

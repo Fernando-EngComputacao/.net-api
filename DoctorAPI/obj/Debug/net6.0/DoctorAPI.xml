@@ -35,7 +35,10 @@
             <summary> Adiciona uma consulta ao banco de dados </summary>
         </member>
         <member name="M:DoctorAPI.Assets.Controllers.AppointmentController.recoverAppointment(System.Int32,System.Int32)">
-            <summary> Busca a lista inteira da consultas </summary>
+            <summary> Busca a lista inteira da consultas com dados do médico e paciente resumidos</summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.AppointmentController.recoverAppointmentAll(System.Int32,System.Int32)">
+            <summary> Busca a lista inteira da consultas com todos os dados do médico e paciente </summary>
         </member>
         <member name="M:DoctorAPI.Assets.Controllers.AppointmentController.recoverAppointmentById(System.Int64)">
             <summary> Busca uma consulta por um {id} </summary>
