@@ -3,7 +3,7 @@
   <component name="EfCoreDialogsState">
     <option name="keyValueStorage">
       <map>
-        <entry key="Common:b0fd0b53-4718-48b6-ac00-2b5bcca09b9e:dbContext" value="DoctorAPI.Assets.data.DoctorContext" />
+        <entry key="Common:b0fd0b53-4718-48b6-ac00-2b5bcca09b9e:dbContext" value="DoctorAPI.Assets.data.UserDBContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
         <entry key="Common:idempotent" value="false" />
         <entry key="Common:noBuild" value="false" />

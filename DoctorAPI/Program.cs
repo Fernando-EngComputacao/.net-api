@@ -1,16 +1,32 @@
 using System.Reflection;
 using DoctorAPI.Assets.data;
+using DoctorAPI.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString(("DoctorConnection"));
+var connectionStringClinic = builder.Configuration.GetConnectionString(("DoctorConnection"));
+var connectionStringUser = builder.Configuration.GetConnectionString(("UserConnection"));
 
-builder.Services.AddDbContext<DoctorContext>(opts => 
-    opts.UseLazyLoadingProxies()
-        .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) 
+builder.Services.AddDbContext<DoctorContext>(opts =>
+{
+    opts.UseMySql(connectionStringClinic, ServerVersion.AutoDetect(connectionStringClinic));
+});
+builder.Services.AddDbContext<UserDBContext>(
+    opts =>
+    {
+        opts.UseMySql(connectionStringUser, ServerVersion.AutoDetect(connectionStringUser));
+        
+    }
 );
+
+builder.Services
+    .AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<UserDBContext>()
+    .AddDefaultTokenProviders();
+
 
 // To use AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
