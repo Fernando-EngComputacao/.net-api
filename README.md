@@ -37,4 +37,6 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 ## :bookmark: Certificações do curso
 ° Curso 01: **[.NET 6: CRIANDO UMA WEB API](https://cursos.alura.com.br/certificate/80fa2514-d085-4476-99b0-a8347c25173c)**
 
+° Curso 02: **[.NET 6: RELACIONANDO ENTIDADES](https://cursos.alura.com.br/certificate/38572c61-6225-4d33-87b9-92919a647aa3)**
+
 ---
