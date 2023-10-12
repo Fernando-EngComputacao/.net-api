@@ -28,19 +28,21 @@ public class UserController : ControllerBase
         return Ok(await _service.createUser(dto));
     }
 
-    [RequireAuthentication]
-    [Authorize(Policy = "standard")]
+    
     /// <summary> Busca o usuário pelo CPF </summary>
     [HttpPost("/User/cpf")]
+    [RequireAuthentication]
+    [Authorize(Policy = "standard")]
     public Task<IActionResult> getAllUsers([FromBody] ReadCpfUser cpf)
     {
         return _service.getUserByCPF(cpf);
     }
 
-    [RequireAuthentication]
-    [Authorize(Policy = "standard")]
+    
     /// <summary> Busca todos os usuários cadastrados no banco de dados </summary>
     [HttpGet]
+    [RequireAuthentication]
+    [Authorize(Policy = "standard")]
     public Task<IActionResult> getAllUsers([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
         return _service.getAllUsers(skip, take);
