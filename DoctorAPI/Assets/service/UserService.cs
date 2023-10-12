@@ -13,13 +13,15 @@ public class UserService
     private IMapper _mapper;
     private UserManager<User> _userManager;
     private SignInManager<User> _signInManager;
-    public UserDBContext _context;
-    public UserService(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager, UserDBContext context)
+    private UserDBContext _context;
+    private TokenService _tokenService;
+    public UserService(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager, UserDBContext context, TokenService tokenService)
     {
         _mapper = mapper;
         _userManager = userManager;
         _signInManager = signInManager;
         _context = context;
+        _tokenService = tokenService;
     }
     
     public async Task<string> createUser(CreateUser dto)
@@ -32,12 +34,21 @@ public class UserService
         return "User created!";
     }
 
-    public async Task<string> login(Authentication auth)
+    public async Task<TokenDTO> login(Authentication auth)
     {
+        
         var result = await _signInManager.PasswordSignInAsync(auth.username, auth.password, false, false);
         if (!result.Succeeded) throw new ApplicationException("User not authenticated!");
 
-        return "User authenticated!";
+        // Recupera o Usuário a partir do Username do Auth
+        var user = _signInManager
+            .UserManager
+            .Users
+            .FirstOrDefault(user => user.UserName == auth.username.ToUpper());
+
+        var tokenString = _tokenService.generateToken(user);
+        var token = new TokenDTO(tokenString);
+        return token;
     }
 
     public async Task<IActionResult> getAllUsers([FromQuery] int skip = 0, [FromQuery] int take = 10)
@@ -53,6 +64,5 @@ public class UserService
         var result = _mapper.Map<ReadUser>(user);
         return new OkObjectResult(result);
     }
-
     
 }

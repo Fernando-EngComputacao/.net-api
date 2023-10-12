@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
+            "IdentityServer4.AccessTokenValidation": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.14, )"
@@ -74,6 +78,22 @@
               "target": "Package",
               "version": "[6.0.14, )"
             },
+            "Microsoft.Identity.Client": {
+              "target": "Package",
+              "version": "[4.50.0, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens.Saml": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.2, )"
@@ -81,6 +101,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "System.IdentityModel.Tokens.ValidatingIssuerNameRegistry": {
+              "target": "Package",
+              "version": "[4.5.1, )"
             }
           },
           "imports": [

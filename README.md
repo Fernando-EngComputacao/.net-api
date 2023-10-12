@@ -30,6 +30,13 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 - [x] Microsoft.EntityFrameworkCore.Proxies 6.0.14
 - [x] Microsoft.AspNetCore.Mvc.NewtonsoftJson 6.0.14
 - [x] Microsoft.Extensions.Identity.Stores 6.0.14
+- [x] IdentityServer4.AccessTokenValidation 3.0.1
+- [x] System.IdentityModel.Tokens.Jwt 6.27.0
+- [x] Microsoft.IdentityModel.Tokens 6.27.0
+- [x] Microsoft.IdentityModel.Tokens.Saml 6.27.0
+- [x] Microsoft.IdentityModel.JsonWebTokens 6.27.00
+- [x] Microsoft.Identity.Client 4.50.0
+- [x] System.IdentityModel.Tokens.ValidatingIssuerNameRegistry 4.5.1
 - [x] AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.0
 - [x] AutoMapper 12.0.0
   

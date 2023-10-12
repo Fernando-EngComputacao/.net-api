@@ -37,6 +37,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // To use Service
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<TokenService>();
 
 // Add services to the container.
 
