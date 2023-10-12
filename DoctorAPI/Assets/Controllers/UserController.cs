@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DoctorAPI.Assets.profiles;
+using DoctorAPI.Assets.service;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
 using Microsoft.AspNetCore.Identity;
@@ -11,23 +12,17 @@ namespace DoctorAPI.Assets.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    private IMapper _mapper;
-    private UserManager<User> _userManager;
+    private UserService _service;
 
-    public UserController(IMapper mapper, UserManager<User> userManager)
+    public UserController(UserService service)
     {
-        _mapper = mapper;
-        _userManager = userManager;
+        _service = service;
     }
     
     [HttpPost]
     public async Task<IActionResult> createUser(CreateUser dto)
     {
-        User user = _mapper.Map<User>(dto);
-        IdentityResult? result = await _userManager.CreateAsync(user, dto.password);
-
-        if (result.Succeeded) return Ok("Created User");
-
-        throw new ApplicationException("Faild to create a user!");
+        _service.createUser(dto);
+        return Ok("Created User");
     }
 }
