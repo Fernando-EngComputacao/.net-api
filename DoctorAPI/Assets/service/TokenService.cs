@@ -15,7 +15,8 @@ public class TokenService
             new Claim("usename", user.UserName),
             new Claim("id", user.Id),
             new Claim(ClaimTypes.DateOfBirth, user.birth.ToString()),
-            new Claim("cpf", user.cpf)
+            new Claim("cpf", user.cpf),
+            new Claim("loginTimestamp", DateTime.UtcNow.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("5DFA4F56ASDFA6SF54A6SD5F4")); //Valor digitado aleatoriamente 
