@@ -2,6 +2,7 @@
 using DoctorAPI.Assets.data;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,7 @@ public class AppointmentController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
+    [Authorize(Policy = "standard")]
     public IActionResult registerAppointment([FromBody] CreateAppointment dto)
     {
         Appointment appointment = _mapper.Map<Appointment>(dto);

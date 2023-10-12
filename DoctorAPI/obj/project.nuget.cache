@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "doc/OPu2JAtBfvZEbkXpvJPnULt+WOSERkrfzblS9g4f2cvKWhU32SMKRZdbAfjS4a6R0R5APv88wlPZLCGrgQ==",
+  "dgSpecHash": "fHHcZIyu7ypVpl3Re3kxySslliHbI/Za1T6Y901DmvVkQ0krTSxApP/sn8dyso1lLZ+e7Go6ucX97EzN1nz6Xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\fernando.furtado\\Workspace\\ride\\DoctorAPI\\DoctorAPI\\DoctorAPI.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
-    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.14\\microsoft.aspnetcore.authentication.jwtbearer.6.0.14.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.14\\microsoft.aspnetcore.cryptography.internal.6.0.14.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.14\\microsoft.aspnetcore.cryptography.keyderivation.6.0.14.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.14\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.14.nupkg.sha512",
@@ -40,8 +40,8 @@
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.27.0\\microsoft.identitymodel.abstractions.6.27.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.27.0\\microsoft.identitymodel.jsonwebtokens.6.27.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.logging\\6.27.0\\microsoft.identitymodel.logging.6.27.0.nupkg.sha512",
-    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.5.0\\microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
-    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.27.0\\microsoft.identitymodel.tokens.6.27.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.tokens.saml\\6.27.0\\microsoft.identitymodel.tokens.saml.6.27.0.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\microsoft.identitymodel.xml\\6.27.0\\microsoft.identitymodel.xml.6.27.0.nupkg.sha512",

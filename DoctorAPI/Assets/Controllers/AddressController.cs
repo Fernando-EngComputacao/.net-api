@@ -2,6 +2,7 @@
 using DoctorAPI.Assets.data;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,6 +36,7 @@ public class AddressController : ControllerBase
     
     /// <summary> Busca a lista inteira de endereços </summary>
     [HttpGet]
+    [Authorize(Policy = "standard")]
     public IEnumerable<UpdateAddress> recoverAddress([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
         var address = _context.Address.Skip(skip).Take(take);

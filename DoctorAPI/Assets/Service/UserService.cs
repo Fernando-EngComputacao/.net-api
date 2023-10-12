@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using AutoMapper;
+﻿using AutoMapper;
 using DoctorAPI.Assets.data;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
@@ -8,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorAPI.Assets.service;
 
-public class UserService
+public class UserService 
 {
     private IMapper _mapper;
     private UserManager<User> _userManager;
@@ -65,4 +64,15 @@ public class UserService
         return new OkObjectResult(result);
     }
     
+    public async Task<Boolean> validateUserCredentials(string id, string username, string password)
+    {
+        var user = _context.UsersDB.FirstOrDefault(user => user.Id == id);
+        if (user is null) return false;
+        if ((user.UserName == username) && (true))
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
