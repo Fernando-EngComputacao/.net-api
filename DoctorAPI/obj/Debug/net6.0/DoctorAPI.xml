@@ -56,7 +56,7 @@
             <summary> Deleta definitivamente a consulta do {id} escolhido </summary>
         </member>
         <member name="M:DoctorAPI.Assets.Controllers.AuthenticationController.login(DoctorAPI.Models.Authentication)">
-            <summary> Autentica um usuário (login) </summary>
+            <summary> 🔑 Autentica um usuário (login)  </summary>
         </member>
         <member name="M:DoctorAPI.Assets.Controllers.PatientController.registerPatient(DoctorAPI.Models.dto.CreatePatient)">
             <summary> Adiciona um paciente ao banco de dados </summary>
