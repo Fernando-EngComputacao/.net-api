@@ -17,6 +17,7 @@ public class UserAuthorization : AuthorizationHandler<ValidUser>
             var currentDate = DateTime.Now;
             var difference = tokenDate - currentDate;
             
+            // Valida as 2h de duração do TOKEN
             if (difference.TotalHours > 0)
             {
                 context.Succeed(requirement);
