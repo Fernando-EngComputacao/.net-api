@@ -17,11 +17,12 @@ public class UserService
         _userManager = userManager;
     }
     
-    public async void createUser(CreateUser dto)
+    public async Task createUser(CreateUser dto)
     {
         User user = _mapper.Map<User>(dto);
         IdentityResult? result = await _userManager.CreateAsync(user, dto.password);
 
         if (!result.Succeeded) throw new ApplicationException("Faild to create a user!");
+
     }
 }

@@ -1,5 +1,6 @@
 using System.Reflection;
 using DoctorAPI.Assets.data;
+using DoctorAPI.Assets.service;
 using DoctorAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,9 @@ builder.Services
 
 // To use AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// To use Service
+builder.Services.AddScoped<UserService>();
 
 // Add services to the container.
 
