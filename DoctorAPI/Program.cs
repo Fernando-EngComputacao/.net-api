@@ -11,10 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionStringClinic = builder.Configuration.GetConnectionString(("DoctorConnection"));
 var connectionStringUser = builder.Configuration.GetConnectionString(("UserConnection"));
 
-builder.Services.AddDbContext<DoctorContext>(opts =>
-{
-    opts.UseMySql(connectionStringClinic, ServerVersion.AutoDetect(connectionStringClinic));
-});
+builder.Services.AddDbContext<DoctorContext>(
+    opts =>
+    {
+        opts.UseMySql(connectionStringClinic, ServerVersion.AutoDetect(connectionStringClinic));
+    }
+);
+
 builder.Services.AddDbContext<UserDBContext>(
     opts =>
     {

@@ -55,6 +55,9 @@
         <member name="M:DoctorAPI.Assets.Controllers.AppointmentController.removeAppointment(System.Int32)">
             <summary> Deleta definitivamente a consulta do {id} escolhido </summary>
         </member>
+        <member name="M:DoctorAPI.Assets.Controllers.AuthenticationController.login(DoctorAPI.Models.Authentication)">
+            <summary> Autentica um usuário (login) </summary>
+        </member>
         <member name="M:DoctorAPI.Assets.Controllers.PatientController.registerPatient(DoctorAPI.Models.dto.CreatePatient)">
             <summary> Adiciona um paciente ao banco de dados </summary>
         </member>
@@ -81,6 +84,15 @@
         </member>
         <member name="M:DoctorAPI.Assets.Controllers.PatientController.removeLogical(System.Int32)">
             <summary> Inativa o paciente do {id} escolhido (deleção lógica) </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.UserController.createUser(DoctorAPI.Models.dto.CreateUser)">
+            <summary> Adiciona um usuário ao banco de dados </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.UserController.getAllUsers(DoctorAPI.Models.dto.ReadCpfUser)">
+            <summary> Busca o usuário pelo CPF </summary>
+        </member>
+        <member name="M:DoctorAPI.Assets.Controllers.UserController.getAllUsers(System.Int32,System.Int32)">
+            <summary> Busca todos os usuários cadastrados no banco de dados </summary>
         </member>
         <member name="M:DoctorAPI.Controllers.DoctorController.registerDoctor(DoctorAPI.Models.dto.CreateDoctorDTO)">
             <summary> Adiciona um médico ao banco de dados </summary>

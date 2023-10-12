@@ -10,4 +10,6 @@ public class UserDBContext : IdentityDbContext<User>
     {
         
     }
+    
+    public DbSet<User> UsersDB { get; set; }
 }

@@ -16,6 +16,7 @@ public class AuthenticationController :  ControllerBase
         _service = service;
     }
 
+    /// <summary> Autentica um usuário (login) </summary>
     [HttpPost]
     public async Task<IActionResult> login(Authentication auth)
     {

@@ -9,6 +9,7 @@ public class CreateUser
     
     [Required] 
     public DateTime birth { get; set; }
+    public string cpf { get; set; }
     
     [Required] 
     [DataType(DataType.Password)]
