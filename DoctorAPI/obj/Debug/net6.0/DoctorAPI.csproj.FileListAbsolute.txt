@@ -69,3 +69,4 @@ C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Mi
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Xml.dll
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.ValidatingIssuerNameRegistry.dll
+C:\Users\fernando.furtado\Workspace\ride\DoctorAPI\DoctorAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll

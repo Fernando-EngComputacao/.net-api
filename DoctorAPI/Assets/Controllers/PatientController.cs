@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using DoctorAPI.Assets.data;
+using DoctorAPI.Assets.Security.Authorization;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +11,8 @@ namespace DoctorAPI.Assets.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[RequireAuthentication]
+[Authorize(Policy = "standard")]
 public class PatientController : ControllerBase
 {
     private DoctorContext _context;

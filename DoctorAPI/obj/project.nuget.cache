@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fHHcZIyu7ypVpl3Re3kxySslliHbI/Za1T6Y901DmvVkQ0krTSxApP/sn8dyso1lLZ+e7Go6ucX97EzN1nz6Xg==",
+  "dgSpecHash": "izwX4X4cVZHzTy6t4ZIgWPAyDBeBmIGRP0KFt5WZaM8t/NyZ1iKf4OEB2dFYVDZezUpt4K5l+gzxFA3EUY6q7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\fernando.furtado\\Workspace\\ride\\DoctorAPI\\DoctorAPI\\DoctorAPI.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,7 @@
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.2\\pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.0.1\\swashbuckle.aspnetcore.annotations.6.0.1.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\fernando.furtado\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",

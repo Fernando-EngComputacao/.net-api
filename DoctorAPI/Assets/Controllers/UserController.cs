@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using DoctorAPI.Assets.profiles;
+using DoctorAPI.Assets.Security.Authorization;
 using DoctorAPI.Assets.service;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +28,8 @@ public class UserController : ControllerBase
         return Ok(await _service.createUser(dto));
     }
 
-
+    [RequireAuthentication]
+    [Authorize(Policy = "standard")]
     /// <summary> Busca o usuário pelo CPF </summary>
     [HttpPost("/User/cpf")]
     public Task<IActionResult> getAllUsers([FromBody] ReadCpfUser cpf)
@@ -34,7 +37,8 @@ public class UserController : ControllerBase
         return _service.getUserByCPF(cpf);
     }
 
-    
+    [RequireAuthentication]
+    [Authorize(Policy = "standard")]
     /// <summary> Busca todos os usuários cadastrados no banco de dados </summary>
     [HttpGet]
     public Task<IActionResult> getAllUsers([FromQuery] int skip = 0, [FromQuery] int take = 10)

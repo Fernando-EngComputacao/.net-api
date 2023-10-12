@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DoctorAPI.Assets.data;
+using DoctorAPI.Assets.Security.Authorization;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +11,8 @@ namespace DoctorAPI.Assets.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[RequireAuthentication]
+[Authorize(Policy = "standard")]
 public class AppointmentController : ControllerBase
 {
     private DoctorContext _context;
@@ -25,7 +28,6 @@ public class AppointmentController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    [Authorize(Policy = "standard")]
     public IActionResult registerAppointment([FromBody] CreateAppointment dto)
     {
         Appointment appointment = _mapper.Map<Appointment>(dto);

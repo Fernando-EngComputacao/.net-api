@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DoctorAPI.Assets.data;
+using DoctorAPI.Assets.Security.Authorization;
 using DoctorAPI.Models;
 using DoctorAPI.Models.dto;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +11,8 @@ namespace AddressAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[RequireAuthentication]
+[Authorize(Policy = "standard")]
 public class AddressController : ControllerBase
 {
     private DoctorContext _context;
@@ -36,7 +39,6 @@ public class AddressController : ControllerBase
     
     /// <summary> Busca a lista inteira de endereços </summary>
     [HttpGet]
-    [Authorize(Policy = "standard")]
     public IEnumerable<UpdateAddress> recoverAddress([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
         var address = _context.Address.Skip(skip).Take(take);

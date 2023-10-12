@@ -3,6 +3,7 @@ using System.Text;
 using DoctorAPI.Assets.data;
 using DoctorAPI.Assets.Security;
 using DoctorAPI.Assets.service;
+using DoctorAPI.core;
 using DoctorAPI.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -54,6 +55,12 @@ builder.Services.AddAuthorization(opt =>
         {
             policy.AddRequirements(new ValidUser());
         });
+        opt.AddPolicy("local", policy =>
+        {
+            policy.RequireAuthenticatedUser();
+            policy.AddRequirements(new ValidUser());
+            policy.RequireClaim("NívelDeAcesso", "Admin");
+        });
     }
 );
 
@@ -84,9 +91,32 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo() { Title = "ClinicAPI", Version = "v1" });
+
+    // Configuração do esquema de segurança Bearer
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            new string[] {}
+        }
+    });
+
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
+
+    // Adiciona o filtro personalizado para adicionar ícones de cadeado
+    c.OperationFilter<SwaggerString>();
 });
 
 

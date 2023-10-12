@@ -27,6 +27,7 @@
         <PackageReference Include="Microsoft.IdentityModel.Tokens.Saml" Version="6.27.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.0.1" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
         <PackageReference Include="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry" Version="4.5.1" />
     </ItemGroup>
