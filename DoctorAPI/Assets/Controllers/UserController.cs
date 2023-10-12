@@ -22,8 +22,7 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> createUser(CreateUser dto)
     {
-        await _service.createUser(dto);
-        return Ok("User created!");
+        return Ok(await _service.createUser(dto));
     }
     
 }
