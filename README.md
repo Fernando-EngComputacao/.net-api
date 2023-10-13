@@ -40,6 +40,8 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 - [x] System.IdentityModel.Tokens.ValidatingIssuerNameRegistry 4.5.1
 - [x] AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.0
 - [x] AutoMapper 12.0.0
+- [x] Swashbuckle.AspNetCore 6.2.3
+- [x] Swashbuckle.AspNetCore.Annotations 6.0.1
   
 ---
 
@@ -47,5 +49,7 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 ° Curso 01: **[.NET 6: CRIANDO UMA WEB API](https://cursos.alura.com.br/certificate/80fa2514-d085-4476-99b0-a8347c25173c)**
 
 ° Curso 02: **[.NET 6: RELACIONANDO ENTIDADES](https://cursos.alura.com.br/certificate/38572c61-6225-4d33-87b9-92919a647aa3)**
+
+° Curso 03: **[.NET 6 E IDENTITY: IMPLEMENTANDO CONTROLE DE USUÁRIO](https://cursos.alura.com.br/certificate/c5c77815-5e42-4a2c-853e-0108aea9e882)**
 
 ---
